@@ -6,6 +6,7 @@ export const profile = {
   email: "benjaminngyt@gmail.com",
   github: "https://github.com/BuuBuBuu",
   linkedin: "https://linkedin.com/in/benjamin-ng-yi-ting",
+  resume: "/benjamin-ng-resume.md",
   summary:
     "Driven professional building a career at the intersection of software engineering and cybersecurity. Currently working in cybersecurity operations at Mizuho Bank — handling Splunk log monitoring, vulnerability assessments, and DevSecOps practices. Background spans full-stack development, business analytics, and financial services.",
 };

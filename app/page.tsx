@@ -24,6 +24,7 @@ export default function Home() {
             {[
               { href: profile.github, label: "[ GitHub ]", border: "var(--green-dark)", color: "var(--green)", bg: "rgba(0,255,65,0.04)" },
               { href: profile.linkedin, label: "[ LinkedIn ]", border: "rgba(0,255,255,0.3)", color: "var(--cyan)", bg: "rgba(0,255,255,0.04)" },
+              { href: profile.resume, label: "[ Resume ]", border: "rgba(255,255,0,0.3)", color: "var(--yellow)", bg: "rgba(255,255,0,0.04)", download: true },
               { href: `mailto:${profile.email}`, label: "[ Email ]", border: "var(--border)", color: "var(--text-muted)", bg: "transparent" },
             ].map((btn) => (
               <a
@@ -31,6 +32,7 @@ export default function Home() {
                 href={btn.href}
                 target={btn.href.startsWith("http") ? "_blank" : undefined}
                 rel={btn.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                download={btn.download ? "benjamin-ng-resume.md" : undefined}
                 style={{
                   padding: "8px 18px",
                   border: `1px solid ${btn.border}`,
@@ -56,17 +58,30 @@ export default function Home() {
             {[
               { href: "/about", label: "about/", desc: "Background, experience, education" },
               { href: "/projects", label: "projects/", desc: "Code I've shipped" },
-              { href: "/blog", label: "blog/", desc: "Writeups and notes" },
+              { href: profile.resume, label: "resume.md", desc: "Career snapshot for recruiters", download: true },
             ].map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="terminal-window card-hover"
-                style={{ textDecoration: "none", display: "block", padding: "20px" }}
-              >
-                <div style={{ color: "var(--green)", fontSize: 14, marginBottom: 6 }}>{item.label}</div>
-                <div style={{ color: "var(--text-muted)", fontSize: 12 }}>{item.desc}</div>
-              </Link>
+              item.download ? (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  download="benjamin-ng-resume.md"
+                  className="terminal-window card-hover"
+                  style={{ textDecoration: "none", display: "block", padding: "20px" }}
+                >
+                  <div style={{ color: "var(--green)", fontSize: 14, marginBottom: 6 }}>{item.label}</div>
+                  <div style={{ color: "var(--text-muted)", fontSize: 12 }}>{item.desc}</div>
+                </a>
+              ) : (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="terminal-window card-hover"
+                  style={{ textDecoration: "none", display: "block", padding: "20px" }}
+                >
+                  <div style={{ color: "var(--green)", fontSize: 14, marginBottom: 6 }}>{item.label}</div>
+                  <div style={{ color: "var(--text-muted)", fontSize: 12 }}>{item.desc}</div>
+                </Link>
+              )
             ))}
           </div>
         </section>

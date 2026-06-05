@@ -22,7 +22,7 @@ export default function Projects() {
           Things I&apos;ve built.
         </p>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(380px, 1fr))", gap: 20 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 380px), 1fr))", gap: 20 }}>
           {projects.map((p, i) => (
             <div
               key={i}
@@ -65,7 +65,7 @@ export default function Projects() {
             style={{ padding: "32px 24px", textAlign: "center", borderStyle: "dashed" }}
           >
             <p style={{ color: "var(--text-muted)", fontSize: 13, margin: 0 }}>
-              CTF writeups coming soon. Check back after I&apos;ve wrecked a few boxes.
+              CTF and security notes coming soon.
             </p>
           </div>
         </div>

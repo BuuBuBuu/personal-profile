@@ -24,7 +24,7 @@ export default function Blog() {
             $ find . -name &quot;*.md&quot; -type f
           </p>
           <p style={{ color: "var(--text-muted)", fontSize: 13, margin: 0 }}>
-            No posts yet. First writeup loading...
+            No published notes yet.
           </p>
         </div>
 
